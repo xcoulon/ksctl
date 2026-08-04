@@ -2,7 +2,7 @@ name: govulncheck
 on:
   pull_request:
     branches:
-      - master
+    - master
 
 jobs:
   govulncheck:
@@ -16,6 +16,5 @@ jobs:
     - name: Run govulncheck
       uses: codeready-toolchain/toolchain-cicd/govulncheck-action@master
       with:
-        go-version-file: go.mod
-        cache: false
         config: .govulncheck.yaml
+        debug: true # optional (default = false)
